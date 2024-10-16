@@ -27,7 +27,6 @@ import kotlinx.coroutines.withContext
 import org.bouncycastle.openpgp.PGPPublicKeyRing
 import org.bouncycastle.openpgp.PGPSecretKeyRing
 import org.pgpainless.PGPainless
-import org.pgpainless.util.selection.userid.SelectUserId
 
 public class PGPKeyManager
 @Inject
