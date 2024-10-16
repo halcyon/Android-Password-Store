@@ -476,7 +476,7 @@ open class SearchableRepositoryAdapter<T : RecyclerView.ViewHolder>(
 
   private var selectionTracker: SelectionTracker<String>? = null
 
-  fun requireSelectionTracker() = selectionTracker!!
+  fun requireSelectionTracker() = selectionTracker ?: throw NullPointerException()
 
   private val selectedFiles
     get() = requireSelectionTracker().selection.map { File(it) }

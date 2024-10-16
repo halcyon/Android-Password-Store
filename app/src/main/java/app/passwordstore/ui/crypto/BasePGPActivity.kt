@@ -44,10 +44,10 @@ import kotlinx.coroutines.withContext
 open class BasePGPActivity : AppCompatActivity() {
 
   /** Full path to the repository */
-  val repoPath by unsafeLazy { intent.getStringExtra("REPO_PATH")!! }
+  val repoPath by unsafeLazy { intent.getStringExtra("REPO_PATH") ?: throw NullPointerException() }
 
   /** Full path to the password file being worked on */
-  val fullPath by unsafeLazy { intent.getStringExtra("FILE_PATH")!! }
+  val fullPath by unsafeLazy { intent.getStringExtra("FILE_PATH") ?: throw NullPointerException() }
 
   /**
    * Name of the password file

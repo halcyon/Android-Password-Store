@@ -31,7 +31,9 @@ class FolderCreationDialogFragment : DialogFragment() {
     dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
     dialog.setOnShowListener {
       dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-        createDirectory(requireArguments().getString(CURRENT_DIR_EXTRA)!!)
+        createDirectory(
+          requireArguments().getString(CURRENT_DIR_EXTRA) ?: throw NullPointerException()
+        )
       }
     }
     return dialog

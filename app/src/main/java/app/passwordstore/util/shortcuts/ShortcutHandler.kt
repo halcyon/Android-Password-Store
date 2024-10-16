@@ -89,10 +89,10 @@ class ShortcutHandler @Inject constructor(@ApplicationContext val context: Conte
   private fun rebuildShortcut(shortcut: ShortcutInfo): ShortcutInfo {
     // Non-null assertions are fine since we know these values aren't null.
     return ShortcutInfo.Builder(context, shortcut.id)
-      .setShortLabel(shortcut.shortLabel!!)
-      .setLongLabel(shortcut.longLabel!!)
+      .setShortLabel(shortcut.shortLabel ?: throw NullPointerException())
+      .setLongLabel(shortcut.longLabel ?: throw NullPointerException())
       .setIcon(Icon.createWithResource(context, R.drawable.ic_lock_open_24px))
-      .setIntent(shortcut.intent!!)
+      .setIntent(shortcut.intent ?: throw NullPointerException())
       .build()
   }
 }

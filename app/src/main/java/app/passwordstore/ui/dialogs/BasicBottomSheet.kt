@@ -166,7 +166,7 @@ private constructor(
       require(message != null) { "Message needs to be set" }
       return BasicBottomSheet(
         title,
-        message!!,
+        message ?: throw NullPointerException(),
         positiveButtonLabel,
         negativeButtonLabel,
         positiveButtonClickListener,

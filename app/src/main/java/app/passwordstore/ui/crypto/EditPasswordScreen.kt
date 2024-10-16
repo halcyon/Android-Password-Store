@@ -55,7 +55,7 @@ fun EditPasswordScreen(
       ) {
         if (entry.password != null) {
           PasswordField(
-            value = entry.password!!,
+            value = entry.password ?: throw NullPointerException(),
             label = stringResource(R.string.password),
             initialVisibility = false,
             modifier = Modifier.padding(bottom = SpacingMedium).fillMaxWidth(),

@@ -58,7 +58,7 @@ object PasswordRepository {
 
   // TODO add multiple remotes support for pull/push
   fun addRemote(name: String, url: String, replace: Boolean = false) {
-    val storedConfig = repository!!.config
+    val storedConfig = repository?.config ?: throw NullPointerException()
     val remotes = storedConfig.getSubsections("remote")
 
     if (!remotes.contains(name)) {

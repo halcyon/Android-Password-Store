@@ -17,7 +17,7 @@ import java.net.UnknownHostException
 sealed class GitException(@StringRes res: Int, vararg fmt: String) :
   Exception(buildMessage(res, *fmt)) {
 
-  override val message = super.message!!
+  override val message = super.message ?: throw NullPointerException()
 
   companion object {
 
@@ -60,7 +60,7 @@ object ErrorMessages {
     var cause = throwable
     while (cause.cause != null) {
       if (cause is GitException) break
-      val nextCause = cause.cause!!
+      val nextCause = cause.cause ?: throw NullPointerException()
       if (nextCause is RemoteException) break
       cause = nextCause
     }
