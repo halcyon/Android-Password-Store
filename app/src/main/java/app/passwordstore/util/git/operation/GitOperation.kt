@@ -69,7 +69,7 @@ abstract class GitOperation(protected val callingActivity: FragmentActivity) {
   private var sshSessionFactory: SshjSessionFactory? = null
   private val hiltEntryPoint =
     EntryPointAccessors.fromApplication<GitOperationEntryPoint>(callingActivity)
-  protected val repository = PasswordRepository.repository!!
+  protected val repository = PasswordRepository.repository ?: throw NullPointerException()
   protected val git = Git(repository)
   private val authActivity
     get() = callingActivity as AppCompatActivity

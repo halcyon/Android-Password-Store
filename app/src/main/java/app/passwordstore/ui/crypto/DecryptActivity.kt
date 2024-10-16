@@ -217,7 +217,8 @@ class DecryptActivity : BasePGPActivity() {
     dialog.show(supportFragmentManager, "PASSWORD_DIALOG")
     dialog.setFragmentResultListener(PasswordDialog.PASSWORD_RESULT_KEY) { key, bundle ->
       if (key == PasswordDialog.PASSWORD_RESULT_KEY) {
-        val passphrase = bundle.getString(PasswordDialog.PASSWORD_PHRASE_KEY)!!
+        val passphrase =
+          bundle.getString(PasswordDialog.PASSWORD_PHRASE_KEY) ?: throw NullPointerException()
         clearCache = bundle.getBoolean(PasswordDialog.PASSWORD_CLEAR_KEY)
         lifecycleScope.launch(dispatcherProvider.main()) {
           decryptWithPassphrase(passphrase, gpgIdentifiers, authResult) {
@@ -284,7 +285,12 @@ class DecryptActivity : BasePGPActivity() {
 
       val items = arrayListOf<FieldItem>()
       if (!entry.password.isNullOrBlank()) {
-        items.add(FieldItem.createPasswordField(getString(R.string.password), entry.password!!))
+        items.add(
+          FieldItem.createPasswordField(
+            getString(R.string.password),
+            entry.password ?: throw NullPointerException(),
+          )
+        )
         if (settings.getBoolean(PreferenceKeys.COPY_ON_DECRYPT, false)) {
           copyPasswordToClipboard(entry.password)
         }
@@ -295,7 +301,12 @@ class DecryptActivity : BasePGPActivity() {
       }
 
       if (!entry.username.isNullOrBlank()) {
-        items.add(FieldItem.createUsernameField(getString(R.string.username), entry.username!!))
+        items.add(
+          FieldItem.createUsernameField(
+            getString(R.string.username),
+            entry.username ?: throw NullPointerException(),
+          )
+        )
       }
 
       entry.extraContent.forEach { (key, value) ->

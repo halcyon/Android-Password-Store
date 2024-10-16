@@ -313,7 +313,7 @@ object SshKey {
   private object KeystoreNativeKeyProvider : KeyProvider {
 
     override fun getPublic(): PublicKey =
-      runCatching { androidKeystore.sshPublicKey!! }
+      runCatching { androidKeystore.sshPublicKey ?: throw NullPointerException() }
         .getOrElse { error ->
           logcat { error.asLog() }
           throw IOException(
@@ -323,7 +323,7 @@ object SshKey {
         }
 
     override fun getPrivate(): PrivateKey =
-      runCatching { androidKeystore.sshPrivateKey!! }
+      runCatching { androidKeystore.sshPrivateKey ?: throw NullPointerException() }
         .getOrElse { error ->
           logcat { error.asLog() }
           throw IOException(
@@ -338,7 +338,10 @@ object SshKey {
   private object KeystoreWrappedEd25519KeyProvider : KeyProvider {
 
     override fun getPublic(): PublicKey =
-      runCatching { parseSshPublicKey(sshPublicKey!!)!! }
+      runCatching {
+          parseSshPublicKey(sshPublicKey ?: throw NullPointerException())
+            ?: throw NullPointerException()
+        }
         .getOrElse { error ->
           logcat { error.asLog() }
           throw IOException("Failed to get the public key for wrapped ed25519 key", error)

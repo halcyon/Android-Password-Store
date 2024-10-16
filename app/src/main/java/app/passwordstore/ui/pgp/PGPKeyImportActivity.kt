@@ -91,7 +91,9 @@ class PGPKeyImportActivity : AppCompatActivity() {
           .setTitle(getString(R.string.pgp_key_import_failed))
           .setMessage(getString(R.string.pgp_key_import_failed_replace_message))
           .setPositiveButton(R.string.dialog_yes) { _, _ ->
-            handleImportResult(runCatching { importKey(lastBytes!!, replace = true) })
+            handleImportResult(
+              runCatching { importKey(lastBytes ?: throw NullPointerException(), replace = true) }
+            )
           }
           .setNegativeButton(R.string.dialog_no) { _, _ -> finish() }
           .setCancelable(false)

@@ -152,15 +152,19 @@ class PasswordFragment : Fragment(R.layout.password_recycler_view) {
               requireStore().startSupportActionMode(actionModeCallback) ?: return@onSelectionChanged
 
           if (!selection.isEmpty) {
-            actionMode!!.title =
-              resources.getQuantityString(
-                R.plurals.delete_title,
-                selection.size(),
-                selection.size(),
-              )
-            actionMode!!.invalidate()
+            if (actionMode != null) {
+              actionMode?.title =
+                resources.getQuantityString(
+                  R.plurals.delete_title,
+                  selection.size(),
+                  selection.size(),
+                )
+            } else {
+              throw NullPointerException()
+            }
+            actionMode?.invalidate() ?: throw NullPointerException()
           } else {
-            actionMode!!.finish()
+            actionMode?.finish() ?: throw NullPointerException()
           }
         }
     val recyclerView = binding.passRecycler
@@ -202,7 +206,8 @@ class PasswordFragment : Fragment(R.layout.password_recycler_view) {
               // When the result is not filtered and there is a saved scroll position for
               // it, we try to restore it.
               recyclerViewStateToRestore?.let {
-                recyclerView.layoutManager!!.onRestoreInstanceState(it)
+                recyclerView.layoutManager?.onRestoreInstanceState(it)
+                  ?: throw NullPointerException()
               }
               recyclerViewStateToRestore = null
             }
@@ -372,7 +377,8 @@ class PasswordFragment : Fragment(R.layout.password_recycler_view) {
     requireStore().clearSearch()
     model.navigateTo(
       file,
-      recyclerViewState = binding.passRecycler.layoutManager!!.onSaveInstanceState(),
+      recyclerViewState =
+        binding.passRecycler.layoutManager?.onSaveInstanceState() ?: throw NullPointerException(),
     )
     requireStore().supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }

@@ -80,7 +80,7 @@ abstract class BaseGitActivity : AppCompatActivity() {
     }
     val op =
       when (operation) {
-        GitOp.CLONE -> CloneOperation(this, gitSettings.url!!)
+        GitOp.CLONE -> CloneOperation(this, gitSettings.url ?: throw NullPointerException())
         GitOp.PULL -> PullOperation(this, gitSettings.rebaseOnPull)
         GitOp.PUSH -> PushOperation(this)
         GitOp.SYNC -> SyncOperation(this, gitSettings.rebaseOnPull)

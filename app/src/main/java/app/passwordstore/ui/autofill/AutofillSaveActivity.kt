@@ -110,7 +110,10 @@ class AutofillSaveActivity : AppCompatActivity() {
         putExtras(
           bundleOf(
             "REPO_PATH" to repo.absolutePath,
-            "FILE_PATH" to repo.resolve(intent.getStringExtra(EXTRA_FOLDER_NAME)!!).absolutePath,
+            "FILE_PATH" to
+              repo
+                .resolve(intent.getStringExtra(EXTRA_FOLDER_NAME) ?: throw NullPointerException())
+                .absolutePath,
             PasswordCreationActivity.EXTRA_FILE_NAME to intent.getStringExtra(EXTRA_NAME),
             PasswordCreationActivity.EXTRA_PASSWORD to intent.getStringExtra(EXTRA_PASSWORD),
             PasswordCreationActivity.EXTRA_GENERATE_PASSWORD to
@@ -121,7 +124,7 @@ class AutofillSaveActivity : AppCompatActivity() {
     registerForActivityResult(StartActivityForResult()) { result ->
         val data = result.data
         if (result.resultCode == RESULT_OK && data != null) {
-          val createdPath = data.getStringExtra("CREATED_FILE")!!
+          val createdPath = data.getStringExtra("CREATED_FILE") ?: throw NullPointerException()
           formOrigin?.let { AutofillMatcher.addMatchFor(this, it, File(createdPath)) }
           val password = data.getStringExtra("PASSWORD")
           val resultIntent =

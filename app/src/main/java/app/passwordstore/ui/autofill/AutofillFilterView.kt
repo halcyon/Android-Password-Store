@@ -116,10 +116,14 @@ class AutofillFilterView : AppCompatActivity() {
     formOrigin =
       when {
         intent?.hasExtra(EXTRA_FORM_ORIGIN_WEB) == true -> {
-          FormOrigin.Web(intent!!.getStringExtra(EXTRA_FORM_ORIGIN_WEB)!!)
+          FormOrigin.Web(
+            intent?.getStringExtra(EXTRA_FORM_ORIGIN_WEB) ?: throw NullPointerException()
+          )
         }
         intent?.hasExtra(EXTRA_FORM_ORIGIN_APP) == true -> {
-          FormOrigin.App(intent!!.getStringExtra(EXTRA_FORM_ORIGIN_APP)!!)
+          FormOrigin.App(
+            intent?.getStringExtra(EXTRA_FORM_ORIGIN_APP) ?: throw NullPointerException()
+          )
         }
         else -> {
           logcat(ERROR) {
@@ -233,7 +237,11 @@ class AutofillFilterView : AppCompatActivity() {
       AutofillMatcher.addMatchFor(applicationContext, formOrigin, item.file)
     // intent?.extras? is checked to be non-null in onCreate
     decryptAction.launch(
-      AutofillDecryptActivity.makeDecryptFileIntent(item.file, intent!!.extras!!, this)
+      AutofillDecryptActivity.makeDecryptFileIntent(
+        item.file,
+        intent?.extras ?: throw NullPointerException(),
+        this,
+      )
     )
   }
 }

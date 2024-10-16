@@ -61,7 +61,7 @@ fun ViewPasswordScreen(
       ) {
         if (entry.password != null) {
           PasswordField(
-            value = entry.password!!,
+            value = entry.password ?: throw NullPointerException(),
             label = stringResource(R.string.password),
             initialVisibility = false,
             readOnly = true,
@@ -81,11 +81,13 @@ fun ViewPasswordScreen(
         }
         if (entry.username != null) {
           TextField(
-            value = entry.username!!,
+            value = entry.username ?: throw NullPointerException(),
             onValueChange = {},
             readOnly = true,
             label = { Text(stringResource(R.string.username)) },
-            trailingIcon = { CopyButton(entry.username!!, R.string.copy_label) },
+            trailingIcon = {
+              CopyButton(entry.username ?: throw NullPointerException(), R.string.copy_label)
+            },
             modifier = Modifier.padding(bottom = SpacingMedium).fillMaxWidth(),
           )
         }

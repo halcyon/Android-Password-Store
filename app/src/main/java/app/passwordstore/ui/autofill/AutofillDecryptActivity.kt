@@ -73,7 +73,8 @@ class AutofillDecryptActivity : BasePGPActivity() {
           finish()
           return
         }
-    val isSearchAction = intent?.getBooleanExtra(EXTRA_SEARCH_ACTION, true)!!
+    val isSearchAction =
+      intent?.getBooleanExtra(EXTRA_SEARCH_ACTION, true) ?: throw NullPointerException()
     val action = if (isSearchAction) AutofillAction.Search else AutofillAction.Match
     directoryStructure = AutofillPreferences.directoryStructure(this)
     logcat { action.toString() }
@@ -160,7 +161,8 @@ class AutofillDecryptActivity : BasePGPActivity() {
     dialog.show(supportFragmentManager, "PASSWORD_DIALOG")
     dialog.setFragmentResultListener(PasswordDialog.PASSWORD_RESULT_KEY) { key, bundle ->
       if (key == PasswordDialog.PASSWORD_RESULT_KEY) {
-        val value = bundle.getString(PasswordDialog.PASSWORD_PHRASE_KEY)!!
+        val value =
+          bundle.getString(PasswordDialog.PASSWORD_PHRASE_KEY) ?: throw NullPointerException()
         clearCache = bundle.getBoolean(PasswordDialog.PASSWORD_CLEAR_KEY)
         lifecycleScope.launch(dispatcherProvider.main()) {
           decryptWithPassphrase(File(filePath), identifiers, clientState, action, value)
