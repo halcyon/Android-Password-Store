@@ -5,13 +5,14 @@
 
 package app.passwordstore.crypto
 
+// import·app.passwordstore.crypto.PGPIdentifier.UserId
+// import·app.passwordstore.crypto.errors.UnusableKeyException
+// import·kotlin.test.assertNotEquals
 import app.passwordstore.crypto.KeyUtils.tryGetId
 import app.passwordstore.crypto.PGPIdentifier.KeyId
-import app.passwordstore.crypto.PGPIdentifier.UserId
 import app.passwordstore.crypto.errors.KeyAlreadyExistsException
 import app.passwordstore.crypto.errors.KeyNotFoundException
 import app.passwordstore.crypto.errors.NoKeysAvailableException
-import app.passwordstore.crypto.errors.UnusableKeyException
 import com.github.michaelbull.result.unwrap
 import com.github.michaelbull.result.unwrapError
 import java.io.File
@@ -19,7 +20,6 @@ import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 import kotlin.test.assertIs
-import kotlin.test.assertNotEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -73,7 +73,7 @@ class PGPKeyManagerTest {
       assertEquals(KeyId(CryptoConstants.KEY_ID), keyId)
     }
 
-/*  @Test
+  /*  @Test
   fun addKeyWithUnusableKey() =
     runTest(dispatcher) {
       val error = keyManager.addKey(PGPKey(TestUtils.getAEADSecretKey())).unwrapError()
@@ -105,7 +105,7 @@ class PGPKeyManagerTest {
       assertEquals(keyManager.getKeyId(secretKey), keyManager.getKeyId(returnedKey))
     }
 
-/*  @Test
+  /*  @Test
   fun getKeyByFullUserId() =
     runTest(dispatcher) {
       keyManager.addKey(secretKey).unwrap()
@@ -114,7 +114,7 @@ class PGPKeyManagerTest {
       assertEquals(keyManager.getKeyId(secretKey), keyManager.getKeyId(returnedKey))
     } */
 
-/*  @Test
+  /*  @Test
   fun getKeyByEmailUserId() =
     runTest(dispatcher) {
       keyManager.addKey(secretKey).unwrap()
@@ -158,7 +158,7 @@ class PGPKeyManagerTest {
       assertEquals(2, singleKeyList.size)
     }
 
-/*  @Test
+  /*  @Test
   fun getMultipleIdentityKeyWithAllIdentities() =
     runTest(dispatcher) {
       val key = PGPKey(TestUtils.getArmoredSecretKeyWithMultipleIdentities())
@@ -202,7 +202,7 @@ class PGPKeyManagerTest {
       assertTrue(keyManager.addKey(secretKey).isErr)
     }
 
-/*  @Test
+  /*  @Test
   fun addMultipleKeysWithSameEmail() =
     runTest(dispatcher) {
       val alice =
