@@ -33,7 +33,7 @@ jobs:
 
     - name: Build project
       shell: bash
-      run: ./gradlew assembleNonFreeRelease
+      run: ./gradlew assembleFreeRelease
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@662472033e021d55d94146f66f6058822b0b39fd # v3.27.0
