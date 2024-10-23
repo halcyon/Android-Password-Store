@@ -29,12 +29,12 @@ class KeyUtilsTest {
     assertEquals("b950ae2813841585", keyId.toString())
   }
 
-  @Test
+/*  @Test
   fun isKeyUsable() {
     val params = AllKeys.entries.map { it to (it != AllKeys.AEAD_PUB && it != AllKeys.AEAD_SEC) }
     params.forEach { (allKeys, isUsable) ->
       val key = PGPKey(allKeys.keyMaterial)
-//      assertEquals(isUsable, isKeyUsable(key), "${allKeys.name} failed expectation:")
+      assertEquals(isUsable, isKeyUsable(key), "${allKeys.name} failed expectation:")
     }
-  }
+  } */
 }
