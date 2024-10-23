@@ -63,7 +63,7 @@ public class PGPainlessCryptoHandler @Inject constructor() :
             .withOptions(
               ConsumerOptions()
                 .addDecryptionKeys(keyringCollection, protector)
-                .addDecryptionPassphrase(Passphrase.fromPassword(passphrase))
+                .addMessagePassphrase(Passphrase.fromPassword(passphrase))
             )
         decryptionStream.use { Streams.pipeAll(it, outputStream) }
         return@runCatching

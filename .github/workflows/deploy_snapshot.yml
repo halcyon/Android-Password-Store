@@ -32,7 +32,7 @@ jobs:
 
     - name: Build release app
       shell: bash
-      run: ./gradlew collectFreeReleaseApks collectNonFreeReleaseApks bundleFreeRelease bundleNonFreeRelease -PsentryUploadMappings
+      run: ./gradlew collectFreeReleaseApks bundleFreeRelease -PsentryUploadMappings
       env:
         SNAPSHOT: "true"
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
