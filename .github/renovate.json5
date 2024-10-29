@@ -1,88 +1,89 @@
 {
-  "extends": [
-    "config:base",
-    ":dependencyDashboard",
-    "helpers:pinGitHubActionDigests",
+  extends: [
+    'config:recommended',
+    ':dependencyDashboard',
+    'helpers:pinGitHubActionDigests',
   ],
-  "branchConcurrentLimit": 15,
-  "github-actions": {
-    "fileMatch": [
-       ".github/reusable-workflows/.+\\.ya?ml$",
+  branchConcurrentLimit: 15,
+  'github-actions': {
+    fileMatch: [
+      '.github/reusable-workflows/.+\\.ya?ml$',
     ],
   },
-  "packageRules": [
+  packageRules: [
     {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      description: 'Automerge non-major updates',
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+      automerge: true,
     },
     {
       matchDatasources: [
-        "maven"
+        'maven',
       ],
       registryUrls: [
-        "https://maven.google.com/",
-        "https://repo1.maven.org/maven2",
-        "https://plugins.gradle.org/m2/",
+        'https://maven.google.com/',
+        'https://repo1.maven.org/maven2',
+        'https://plugins.gradle.org/m2/',
       ],
     },
     {
-      "matchPackagePatterns": [
-        "^androidx.*",
-      ],
-      "groupName": "androidx"
-    },
-    {
-      // Compose compiler is tightly coupled to Kotlin version
-      "groupName": "Kotlin and Compose",
-      "matchPackagePrefixes": [
-        "androidx.compose.compiler",
-        "org.jetbrains.kotlin",
+      groupName: 'androidx',
+      matchPackageNames: [
+        '/^androidx.*/',
       ],
     },
     {
-      "matchPackagePatterns": [
-        "^io.sentry",
-        "^sentry",
+      groupName: 'Kotlin and Compose',
+      matchPackageNames: [
+        'androidx.compose.compiler{/,}**',
+        'org.jetbrains.kotlin{/,}**',
       ],
-      "groupName": "sentry"
     },
     {
-      "managers": [
-        "gradle"
+      groupName: 'sentry',
+      matchPackageNames: [
+        '/^io.sentry/',
+        '/^sentry/',
       ],
-      "matchPackagePatterns": [
-        // Later versions require newer JDKs
-        "^org.eclipse.jgit",
-        // AGP dictates the version we can use
-        "^com.android.tools:desugar_jdk_libs",
-        // Later versions require newer JDKs
-        "^commons-codec:commons-codec",
+    },
+    {
+      matchManagers: [
+        'gradle',
       ],
-      "enabled": false
+      enabled: false,
+      matchPackageNames: [
+        '/^org.eclipse.jgit/',
+        '/^com.android.tools:desugar_jdk_libs/',
+        '/^commons-codec:commons-codec/',
+      ],
     },
   ],
-  "regexManagers": [
+  customManagers: [
     {
-      "fileMatch": [
-        "gradle/libs.versions.toml"
+      customType: 'regex',
+      fileMatch: [
+        'gradle/libs.versions.toml',
       ],
-      "matchStrings": [
-        "composeCompiler = \"(?<currentValue>.*)\""
+      matchStrings: [
+        'composeCompiler = "(?<currentValue>.*)"',
       ],
-      "datasourceTemplate": "maven",
-      "depNameTemplate": "androidx.compose.compiler:compiler",
-      "registryUrlTemplate": "https://maven.google.com",
+      datasourceTemplate: 'maven',
+      depNameTemplate: 'androidx.compose.compiler:compiler',
+      registryUrlTemplate: 'https://maven.google.com',
     },
     {
-      "fileMatch": [
-        "build-logic/src/main/kotlin/app/passwordstore/gradle/SpotlessPlugin.kt"
+      customType: 'regex',
+      fileMatch: [
+        'build-logic/src/main/kotlin/app/passwordstore/gradle/SpotlessPlugin.kt',
       ],
-      "matchStrings": [
-        "KTFMT_VERSION = \"(?<currentValue>.*)\""
+      matchStrings: [
+        'KTFMT_VERSION = "(?<currentValue>.*)"',
       ],
-      "datasourceTemplate": "maven",
-      "depNameTemplate": "com.facebook:ktfmt"
-    }
-  ]
+      datasourceTemplate: 'maven',
+      depNameTemplate: 'com.facebook:ktfmt',
+    },
+  ],
 }
