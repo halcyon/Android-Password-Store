@@ -13,6 +13,9 @@ public sealed class CryptoException(message: String? = null, cause: Throwable? =
 /** Sealed exception types for [KeyManager]. */
 public sealed class KeyManagerException(message: String? = null) : CryptoException(message)
 
+/** Issue general message */
+public class KeyManagerGeneralException(message: String) : KeyManagerException(message)
+
 /** Store contains no keys. */
 public data object NoKeysAvailableException : KeyManagerException("No keys were found")
 

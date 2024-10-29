@@ -19,7 +19,7 @@
   public static final ** CREATOR;
 }
 
--keep class androidx.annotation.Keep
+-keep class androidx.annotation.Keep { void <init>(); }
 
 -keep @androidx.annotation.Keep class * {*;}
 
