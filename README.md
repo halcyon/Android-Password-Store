@@ -1,36 +1,22 @@
 # Password Store
 
-[![GitHub workflow](https://github.com/android-password-store/Android-Password-Store/workflows/Deploy%20snapshot%20builds/badge.svg)](https://github.com/android-password-store/Android-Password-Store/actions)
-![Backers on Open Collective](https://opencollective.com/Android-Password-Store/backers/badge.svg) ![Sponsors on Open Collective](https://opencollective.com/Android-Password-Store/sponsors/badge.svg)
+[![GitHub workflow](https://github.com/agrahn/Android-Password-Store/workflows/Deploy%20snapshot%20builds/badge.svg)](https://github.com/agrahn/Android-Password-Store/actions)
 
 ## Download
 
-See https://docs.passwordstore.app/docs/users/release-channels/
+Latest [snapshot](https://github.com/agrahn/Android-Password-Store/releases/tag/latest).
 
 ## Documentation
 
-We're in the process of rewriting our documentation from scratch, and the work-in-progress state can be seen [here](https://docs.passwordstore.app). See the [wiki](https://github.com/android-password-store/Android-Password-Store/wiki/) for the old documentation.
+The original documentation can be found [here](https://docs.passwordstore.app) and [there](https://github.com/android-password-store/Android-Password-Store/wiki/).
 
 ## Contributing
 
-Want to contribute? See if you can [find an issue](https://github.com/android-password-store/Android-Password-Store/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) you are interested in, then send a PR. Consult the [contribution](CONTRIBUTING.md) docs 
-
-Interested in helping to translate Password Store? Contribute [here](https://crowdin.com/project/android-password-store)!
-
-Wanna test development builds to find bugs and offer feedback? Read the [release channels](https://docs.passwordstore.app/docs/Users/release-channels) documentation to get access!
-
-## Community
-
-Ways to get in touch:
-
-* [Github issues](https://github.com/android-password-store/Android-Password-Store/issues): Use it if you have a bug report, or you want to submit a feature request.
-* [GitHub Discussions](https://github.com/android-password-store/Android-Password-Store/discussions): Use it if you do not understand something, or want to discuss a feature request in more detail with all community members before pitching it to maintainers.
+This fork of the original repository just tries to keep pace with automatic dependency updates made by [Renovate](https://github.com/apps/renovate). New features will most likely not be implemented.
 
 ## Donations
 
-The project accepts financial contributions through the following platforms
+If you wish to sponsor the original author, financial contributions can be made through the following platforms
 
 - [GitHub Sponsors](https://github.com/sponsors/android-password-store)
 - [OpenCollective](https://opencollective.com/android-password-store)
-
-<sub>Google Play and the Google Play logo are trademarks of Google LLC.</sub>
