@@ -1,21 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright © 2014-2024 The Android Password Store Authors. All Rights Reserved.
   ~ SPDX-License-Identifier: GPL-3.0-only
   -->
+
 <resources>
+
   <plurals name="delete_title">
     <item quantity="one">%d Element ausgewählt</item>
     <item quantity="other">%d Elemente ausgewählt</item>
   </plurals>
+
   <!-- Activity names -->
+
   <string name="action_settings">Einstellungen</string>
   <string name="dialog_delete_title">Ordner existiert bereits.</string>
   <string name="dialog_delete_msg">Zielordner existiert bereits. Die aktuelle Version unterstützt nur eine einzige Datenquelle. Möchten Sie die aktuelle Datenquelle löschen?\n(%1$s)</string>
   <string name="dialog_delete">Ordner löschen</string>
   <string name="dialog_do_not_delete">Abbruch</string>
   <string name="title_activity_git_clone">Repository-Informationen</string>
+  <string name="title_activity_git_config">Git-Konfiguration</string>
   <string name="title_activity_git_log">Commit-Log</string>
+
   <!-- Password Store -->
   <string name="creation_dialog_text">Bitte klonen oder erstellen Sie ein neues Repository, bevor Sie ein Passwort hinzufügen oder eine Synchronisations-Operation durchführen wollen.</string>
   <plurals name="delete_dialog_text">
@@ -30,20 +35,24 @@
   <string name="password_exists_message">Dies wird %1$s mit %2$s überschreiben.</string>
   <string name="password_move_error_title">Fehler beim Verschieben von Passwörtern</string>
   <string name="password_move_error_message">Verschieben von %1$s nach %2$s fehlgeschlagen</string>
+
   <!-- git commits -->
   <string name="git_commit_add_text">Füge erstelltes Passwort für %1$s mittels Android Password Store hinzu.</string>
   <string name="git_commit_edit_text">Bearbeite das Passwort für %1$s mittels Android Password Store.</string>
-  <string name="git_commit_remove_text">%1$s aus dem Speicher entfernen.</string>
+  <string name="git_commit_remove_text">%1$s aus Android Password Store entfernen.</string>
   <string name="git_commit_move_text">Benenne %1$s in %2$s um.</string>
   <string name="git_commit_move_multiple_text">Verschiebe mehrere Passwörter nach %1$s.</string>
   <string name="git_commit_gpg_id">Initialisiere PGP-IDs in %1$s.</string>
+
   <!-- PGPHandler -->
   <string name="clipboard_copied_text">In die Zwischenablage kopiert</string>
   <string name="file_toast_text">Bitte setzen Sie einen Dateinamen.</string>
   <string name="path_toast_text">Bitte setzen Sie einen Pfad.</string>
   <string name="empty_toast_text">Sie können kein leeres Passwort oder leere Extra-Angaben setzen.</string>
+
   <!-- Git Async Task -->
   <string name="jgit_error_dialog_title">Es ist ein Fehler während der Git-Operation aufgetreten.</string>
+
   <!-- Git Handler -->
   <string name="ssh_preferences_dialog_text">Bitte importieren oder erstellen Sie Ihre SSH-Schlüsseldatei in den Einstellungen.</string>
   <string name="ssh_preferences_dialog_title">Kein SSH-Schlüssel angegeben</string>
@@ -52,30 +61,39 @@
   <string name="passphrase_dialog_title">Authentifizieren</string>
   <string name="passphrase_dialog_text">Bitte geben Sie das Passwort für Ihren SSH-Schlüssel ein.</string>
   <string name="password_dialog_text">Bitte geben Sie das Passwort für dieses Repository ein.</string>
+
   <!-- Clone fragment -->
+
   <string name="server_url">Repository-URL</string>
+
   <string name="connection_mode">Authentifizierungsmethode</string>
+
   <!-- Git Config fragment -->
   <string name="git_user_name_hint">Benutzername</string>
   <string name="git_user_email">E-Mail-Adresse</string>
   <string name="invalid_email_dialog_text">Bitte eine gültige E-Mail-Adresse eingeben</string>
   <string name="clone_button">Klone!</string>
+
   <!-- PGP Handler -->
   <string name="crypto_name_hint">Name</string>
+  <string name="crypto_username_hint">Benutzername</string>
   <string name="crypto_pass_label">Passwort</string>
   <string name="crypto_extra_label">Zusätzliche Angaben</string>
   <string name="crypto_encrypt_username_label">Benutzername verschlüsseln</string>
   <string name="crypto_select">Auswählen</string>
   <string name="crypto_save">Speichern</string>
   <string name="crypto_save_and_copy">Speichern und kopieren</string>
+
   <!-- DECRYPT Layout -->
   <string name="action_search">Suche</string>
-  <string name="password">Passwort:</string>
+  <string name="password">Passwort</string>
   <string name="username">Benutzername</string>
+  <string name="otp_label_format">OTP (läuft in %ds ab)</string>
   <string name="copy_label">Kopieren</string>
   <string name="edit_password">Passwort bearbeiten</string>
   <string name="copy_password">Passwort kopieren</string>
   <string name="share_as_plaintext">Als Klartext teilen</string>
+
   <!-- Preferences -->
   <string name="pref_category_repository_title">Repository</string>
   <string name="pref_edit_git_server_settings">Git-Server-Einstellungen</string>
@@ -97,6 +115,7 @@
   <string name="ssh_key_error_dialog_text">Nachricht : \n</string>
   <string name="pref_recursive_filter_title">Suche in Unterordnern</string>
   <string name="pref_recursive_filter_summary">Findet Passwörter auch in Unterordnern.</string>
+  <string name="pref_directory_structure">Passwort-Ordnerstruktur</string>
   <string name="pref_sort_order_title">Passwortsortierung</string>
   <string name="pref_folder_first_sort_order">Ordner zuerst</string>
   <string name="pref_file_first_sort_order">Dateien zuerst</string>
@@ -121,8 +140,11 @@
   <string name="pref_passphrase_cache_title">Zwischenspeicher für Passphrase aktivieren</string>
   <string name="pref_passphrase_cache_summary">WARNUNG: Dieses Feature ist funktionsbereit, befindet sich jedoch noch in der Erprobungsphase. Erfordert eine aktive Bildschirmsperre.</string>
   <string name="pref_passphrase_cache_authenticate_enable">Zwischenspeicher für Passphrase aktivieren</string>
+  <string name="pref_passphrase_cache_authenticate_disable">Zwischenspeicher für Passphrase deaktivieren</string>
+  <string name="pref_passphrase_cache_auto_clear_authenticate_disable">Automatische Löschung des Zwischenspeichers deaktivieren</string>
   <string name="pref_passphrase_cache_auto_clear_title">Automatische Löschung des Zwischenspeichers</string>
   <string name="pref_passphrase_cache_auto_clear_summary">Löscht die Passphrase aus dem Zwischenspeicher nach Abschalten des Bildschirms.</string>
+
   <!-- PasswordGenerator fragment -->
   <string name="pwgen_title">Passwort erstellen</string>
   <string name="pwgen_generate">Erstellen</string>
@@ -138,8 +160,10 @@
   <string name="pwgen_length_too_short_error">Länge zu kurz für die gewählten Kriterien</string>
   <string name="pwgen_max_iterations_exceeded">Fehler beim Erstellen eines Passworts, das den Anforderungen genügt. Versuchen Sie es mit einem längeren Passwort.</string>
   <string name="pwgen_separator">Trennzeichen</string>
+
   <!-- Password generator prefs -->
   <string name="pref_password_generator_type_title">Passwortgenerator</string>
+
   <!-- ssh keygen fragment -->
   <string name="ssh_keygen_passphrase">Passwort</string>
   <string name="ssh_keygen_generate">Erstellen</string>
@@ -148,9 +172,9 @@
   <string name="ssh_keygen_message">%1$s\n\nFügen Sie den öffentlichen Schlüssel Ihrem Git-Server hinzu.</string>
   <string name="ssh_key_gen_generating_progress">Schlüssel werden erstellt…</string>
   <string name="ssh_keygen_require_authentication">Mit Anmeldedaten für Bildschirmsperre schützen</string>
-  <string name="ssh_keygen_label_rsa">RSA</string>
-  <string name="ssh_keygen_label_ecdsa">ECDSA</string>
-  <string name="ssh_keygen_label_ed25519">Ed25519</string>
+
+
+
   <string name="ssh_keygen_explanation_rsa"><b>RSA (3072 Bit)</b>\nWird von allen Servern unterstützt, allerdings ist die Authentifizierung recht langsam.</string>
   <string name="ssh_keygen_explanation_ecdsa"><b>ECDSA (NIST P-256)</b>\nSchnelle Authentifizierung, unterstützt von den meisten Servern, die noch Updates erhalten.</string>
   <string name="ssh_keygen_explanation_ed25519"><b>Ed25519</b>\nSchnelle Authentifizierung, aber nur von moderneren Servern unterstützt</string>
@@ -158,10 +182,13 @@
   <string name="ssh_keygen_existing_message">Existierenden SSH-Schlüssel ersetzen? Möglicherweise verlieren Sie den Zugriff auf Ihren Server.</string>
   <string name="ssh_keygen_existing_replace">Ersetzen</string>
   <string name="ssh_keygen_existing_keep">Behalten</string>
+
+
   <!-- SSH Android Keystore auth -->
   <string name="biometric_auth_generic_failure">Authentifizierung über Bildschirmsperre fehlgeschlagen</string>
   <string name="biometric_prompt_title_ssh_auth">SSH-Schlüssel freischalten</string>
   <string name="biometric_prompt_title_ssh_keygen">SSH-Schlüssel erstellen</string>
+
   <!-- Misc -->
   <string name="dialog_ok">OK</string>
   <string name="dialog_yes">Ja</string>
@@ -179,6 +206,7 @@
   <string name="refresh_list">Liste aktualisieren</string>
   <string name="send_plaintext_password_to">Passwort unverschlüsselt senden an…</string>
   <string name="app_icon_hint">App-Icon</string>
+
   <!-- Oreo Autofill -->
   <string name="oreo_autofill_select_and_fill_into">Eintrag zum Ausfüllen auswählen</string>
   <string name="oreo_autofill_strict_domain_search">Phishing-resistente Suche</string>
@@ -195,6 +223,8 @@
   <string name="oreo_autofill_warning_publisher_header">Der Hersteller dieser App hat sich geändert, seit Sie einen Eintrag zum Passwort-Speicher mit ihr verknüpft haben:</string>
   <string name="oreo_autofill_warning_publisher_footer"><b>Die derzeit installierte App versucht, Ihre Anmeldeinformationen zu stehlen, indem sie vorgibt, eine vertrauenswürdige App zu sein.</b>\n\nVersuchen Sie, die App zu deinstallieren und installieren Sie sie erneut aus einer vertrauenswürdigen Quelle wie dem Play Store, Amazon Appstore, F-Droid oder dem Shop Ihres Telefonherstellers.</string>
   <string name="oreo_autofill_warning_publisher_install_time">Installiert: %1$s</string>
+
+
   <string name="oreo_autofill_warning_publisher_advanced_info_button">Erweiterte Informationen</string>
   <string name="oreo_autofill_warning_publisher_changed_disable_autofill_button">Autofill deaktiviert lassen</string>
   <string name="oreo_autofill_warning_publisher_reenable_button">Autofill erneut aktivieren</string>
@@ -209,6 +239,7 @@
   <string name="oreo_autofill_enable_dialog_description">Password Store kann das Ausfüllen von Anmeldeformularen und sogar das Speichern von Anmeldedaten in Apps oder auf Webseiten übernehmen.</string>
   <string name="oreo_autofill_enable_dialog_instructions">Tippen Sie auf OK, um diese Funktion zu aktivieren und um zu den Autofill-Einstellungen zu gelangen. Dort wählen Sie \"Password Store\" aus der Liste und bestätigen mit \"OK\".</string>
   <string name="oreo_autofill_enable_dialog_installed_browsers">Autofill-Unterstützung mit installierten Browsern:</string>
+
   <!-- Autofill -->
   <string name="ssh_key_does_not_exist">Der private SSH-Schlüssel konnte nicht geöffnet werden. Bitte überprüfen Sie, ob die Datei existiert.</string>
   <string name="new_password_title">Neues Passwort</string>
@@ -227,6 +258,7 @@
   <string name="pref_biometric_auth_title">Biometrische Authentifizierung</string>
   <string name="pref_biometric_auth_summary">Falls aktiviert, werden Sie beim Starten der App nach Ihrem Fingerabdruck gefragt.</string>
   <string name="pref_biometric_auth_summary_error">Fingerabdrucksensor fehlt oder ist nicht ansprechbar.</string>
+  <string name="pref_biometric_auth_summary_disabled_platform">Feature wegen eines Plattformbugs nicht verfügbar</string>
   <string name="pref_title_openkeystore_clear_keyid">Lösche gespeicherte OpenKeystore SSH-Schlüssel-ID.</string>
   <string name="your_public_key">Ihr öffentlicher Schlüssel</string>
   <string name="error_generate_ssh_key">Fehler beim Erstellen des SSH-Schlüssels</string>
@@ -268,6 +300,7 @@
   <string name="preference_custom_public_suffixes_title">Benutzerdefinierte Domains</string>
   <string name="preference_custom_public_suffixes_summary">Autofill wird Subdomains dieser Domains unterscheiden.</string>
   <string name="preference_custom_public_suffixes_hint">company.com\npersonal.com</string>
+
   <!-- Password creation failure -->
   <string name="password_creation_file_fail_title">Fehler</string>
   <string name="password_creation_file_write_fail_message">Fehler beim Speichern der Passwortdatei im Password Store, bitte versuchen Sie es erneut.</string>
@@ -283,10 +316,12 @@
   <string name="invalid_filename_text">Dateiname darf kein \'/\' enthalten; Verzeichnis oben setzen</string>
   <string name="directory_hint">Ordner</string>
   <string name="new_folder_set_gpg_key">PGP-Schlüssel für Ordner festlegen</string>
+
   <!-- GitException messages -->
   <string name="git_unknown_error">Unbekannter Fehler</string>
   <string name="git_pull_rebase_fail_error">Pull fehlgeschlagen. Sie befinden sich in einem abgelösten Head. Speichern Sie die Änderungen in \"Einstellungen &gt; Lokale Git-Konfiguration &amp; Dienstprogramme\" auf das Remote-Repository in einem neuen Branch und lösen Sie den Konflikt auf Ihrem Computer auf.</string>
   <string name="git_pull_merge_fail_error">Merge fehlgeschlagen, Sie befinden sich in einem Konflikt. TODO: Wiederherstellungsmethode hinzufügen.</string>
+
   <string name="git_push_nff_error">Push wurde vom Remote abgelehnt. Führen Sie den Pull vor dem Push aus. Sie können \"Synchronisieren\" statt Pull/Push nutzen, da es beides implementiert</string>
   <string name="git_push_generic_error">Push wurde von Remote abgelehnt, Grund: %1$s</string>
   <string name="git_push_other_error">Remote hat den Push abgelehnt. Prüfen Sie die Variable receive.denyNonFastForwards in der Konfigurationsdatei des Ziel-Repositorys.</string>
@@ -294,10 +329,12 @@
   <string name="git_operation_running">Git-Operation wird ausgeführt…</string>
   <string name="git_break_out_of_detached_success">Es gab einen Konflikt während des Rebase-Prozesses. Ihr lokaler Branch %1$s wurde auf einen anderen Branch namens %2$s gepusht.\nNutzen Sie diesen Branch, um den Konflikt auf dem Server zu beheben</string>
   <string name="git_break_out_of_detached_unneeded">Das Repository befindet sich nicht im Rebase-Prozess; es ist nicht nötig, den Zustand auf einen weiteren Branch zu pushen.</string>
+
   <!-- GPG key selection in folder creation -->
   <string name="gpg_key_select_mandatory">Um fortzufahren, muss ein PGP-Schlüssel ausgewählt werden.</string>
   <string name="folder_creation_err_file_exists">Dateiname bereits vergeben</string>
   <string name="folder_creation_err_folder_exists">Ein Ordner mit diesem Namen existiert bereits.</string>
+
   <!-- Onboarding flow -->
   <string name="let_s_go">Los geht\'s</string>
   <string name="select_n_repository_type">Wählen Sie einen \nRepository-Typ.</string>
@@ -307,6 +344,7 @@
   <string name="select_gpg_key_title">Wählen Sie einen\nPGP-Schlüssel.</string>
   <string name="select_gpg_key_message">Wählen einen PGP-Schlüssel, mit dem der Store initialisiert werden soll.</string>
   <string name="gpg_key_select">Schlüssel auswählen</string>
+
   <!-- SSH port validation -->
   <string name="ssh_scheme_needed_title">Möglicherweise inkorrekte URL</string>
   <string name="ssh_scheme_needed_message">Es sieht so aus, als ob Sie einen benutzerdefinierten Port in Ihrer URL angegeben haben, aber nicht im ssh://-Schema.\nDas kann dazu führen, dass Ihr Port als Teil des Pfades betrachtet wird. Drücken Sie hier auf OK, um die URL zu korrigieren.</string>
@@ -314,6 +352,7 @@
   <string name="https_scheme_with_port_message">Es sieht so aus, als nutzen Sie eine HTTPS-URL mit benutzerdefiniertem Port. Das ist nicht unterstützt und wird auf lange Sicht zu Problemen führen. Drücken Sie OK, um den Port aus der URL zu entfernen.</string>
   <string name="git_scheme_disallowed_title">Es wird davon abgeraten, das git://-Protokoll zu nutzen.</string>
   <string name="git_scheme_disallowed_message">Das Git-Protokoll des Git-Daemons unterstützt keine verschlüsselten Verbindungen und ist für einen sicheren Betrieb nicht geeignet.</string>
+
   <!-- Proxy configuration activity -->
   <string name="activity_proxy_label">Proxy-Einstellungen</string>
   <string name="proxy_hostname">Proxy-Hostname</string>
@@ -346,4 +385,5 @@
   <string name="biometric_prompt_title_gpg_passphrase_cache">Freischalten des Passphrase-Zwischenspeichers</string>
   <string name="aead_detect_title">AEAD-Verschlüsselung festgestellt</string>
   <string name="aead_detect_message">%1$s, siehe https://passwordstore.app/fix-aead für weiterführende Informationen.</string>
+  <string name="clear_cached_password_on_screen_off">Beim Abschalten des Bildschirms Passphrase aus dem Zwischenspeicher entfernen</string>
 </resources>
