@@ -5,11 +5,11 @@
 
 package app.passwordstore.crypto
 
-// import·app.passwordstore.crypto.PGPIdentifier.UserId
-// import·app.passwordstore.crypto.errors.UnusableKeyException
-// import·kotlin.test.assertNotEquals
+// import app.passwordstore.crypto.errors.UnusableKeyException
+// import kotlin.test.assertNotEquals
 import app.passwordstore.crypto.KeyUtils.tryGetId
 import app.passwordstore.crypto.PGPIdentifier.KeyId
+import app.passwordstore.crypto.PGPIdentifier.UserId
 import app.passwordstore.crypto.errors.KeyAlreadyExistsException
 import app.passwordstore.crypto.errors.KeyNotFoundException
 import app.passwordstore.crypto.errors.NoKeysAvailableException
@@ -105,23 +105,23 @@ class PGPKeyManagerTest {
       assertEquals(keyManager.getKeyId(secretKey), keyManager.getKeyId(returnedKey))
     }
 
-  /*  @Test
+  @Test
   fun getKeyByFullUserId() =
     runTest(dispatcher) {
       keyManager.addKey(secretKey).unwrap()
       val keyId = "${CryptoConstants.KEY_NAME} <${CryptoConstants.KEY_EMAIL}>"
       val returnedKey = keyManager.getKeyById(UserId(keyId)).unwrap()
       assertEquals(keyManager.getKeyId(secretKey), keyManager.getKeyId(returnedKey))
-    } */
+    }
 
-  /*  @Test
+  @Test
   fun getKeyByEmailUserId() =
     runTest(dispatcher) {
       keyManager.addKey(secretKey).unwrap()
       val keyId = CryptoConstants.KEY_EMAIL
       val returnedKey = keyManager.getKeyById(UserId(keyId)).unwrap()
       assertEquals(keyManager.getKeyId(secretKey), keyManager.getKeyId(returnedKey))
-    } */
+    }
 
   @Test
   fun getNonExistentKey() =
