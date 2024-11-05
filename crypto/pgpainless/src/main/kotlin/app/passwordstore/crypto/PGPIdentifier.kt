@@ -98,7 +98,7 @@ public sealed class PGPIdentifier {
      * an email from it.
      */
     @Suppress("NestedBlockDepth")
-    private fun splitUserId(userId: String): String? {
+    public fun splitUserId(userId: String): String? {
       if (userId.isNotEmpty()) {
         val matcher = UserIdRegex.PATTERN.matcher(userId)
         if (matcher.matches()) {

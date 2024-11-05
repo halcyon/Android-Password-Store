@@ -109,7 +109,10 @@ constructor(filesDir: String, private val dispatcher: CoroutineDispatcher) :
               val userIdMatch =
                 keys
                   .map { key -> key to tryGetEmail(key) }
-                  .firstOrNull { (_, userId) -> id.email in userId?.email ?: "" }
+                  .firstOrNull { (_, userId) ->
+                    id.email == userId?.email ||
+                      id.email == PGPIdentifier.splitUserId(userId?.email ?: "")
+                  }
               userIdMatch?.first
             }
           }
