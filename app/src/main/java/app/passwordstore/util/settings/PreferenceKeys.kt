@@ -17,6 +17,7 @@ object PreferenceKeys {
   )
   const val CLEAR_CLIPBOARD_20X = "clear_clipboard_20x"
   const val CLEAR_CLIPBOARD_HISTORY = "clear_clipboard_history"
+  @Deprecated(message = "We have retired persistent caching of passphrases")
   const val CLEAR_SAVED_PASS = "clear_saved_pass"
   const val COPY_ON_DECRYPT = "copy_on_decrypt"
   const val ENABLE_DEBUG_LOGGING = "enable_debug_logging"
@@ -52,6 +53,9 @@ object PreferenceKeys {
 
   @Deprecated("Git branch is no longer stored in preferences")
   const val GIT_BRANCH_NAME = "git_branch"
+  @Deprecated(
+    message = "Now unused, as we have retired persistent caching of passphrases/passwords"
+  )
   const val HTTPS_PASSWORD = "https_password"
   const val LENGTH = "length"
   const val OREO_AUTOFILL_CUSTOM_PUBLIC_SUFFIXES = "oreo_autofill_custom_public_suffixes"
@@ -72,6 +76,9 @@ object PreferenceKeys {
   const val SHOW_PASSWORD = "show_password"
   const val SSH_KEY = "ssh_key"
   const val SSH_KEYGEN = "ssh_keygen"
+  @Deprecated(
+    message = "Now unused, as we have retired persistent caching of passphrases/passwords"
+  )
   const val SSH_KEY_LOCAL_PASSPHRASE = "ssh_key_local_passphrase"
   const val SSH_OPENKEYSTORE_CLEAR_KEY_ID = "ssh_openkeystore_clear_keyid"
   const val SSH_OPENKEYSTORE_KEYID = "ssh_openkeystore_keyid"
@@ -92,7 +99,9 @@ object PreferenceKeys {
   const val DISABLE_SYNC_ACTION = "disable_sync_action"
   const val ASCII_ARMOR = "pgpainless_ascii_armor"
 
-  @Deprecated("Persistent passphrase caching was removed.")
+  @Deprecated(
+    message = "Now unused, as we have retired persistent caching of passphrases/passwords"
+  )
   const val CLEAR_PASSPHRASE_CACHE = "pgpainless_auto_clear_passphrase_cache_screen_off"
   const val CACHE_PASSPHRASE = "cache_passphrase_until_screen_off"
 }

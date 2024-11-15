@@ -28,16 +28,11 @@ class MigrationsTest {
   private lateinit var filesDir: String
   private lateinit var sharedPrefs: SharedPreferences
 
-  //  private lateinit var encryptedSharedPreferences: SharedPreferences
-  //  private lateinit var proxySharedPreferences: SharedPreferences
-
   @BeforeTest
   fun setup() {
     context = SPMockBuilder().createContext()
     filesDir = tempFolder.root.path
     sharedPrefs = SPMockBuilder().createSharedPreferences()
-    //    encryptedSharedPreferences = SPMockBuilder().createSharedPreferences()
-    //    proxySharedPreferences =     SPMockBuilder().createSharedPreferences()
   }
 
   private fun checkOldKeysAreRemoved() =

@@ -4,7 +4,6 @@
  */
 package app.passwordstore.util.settings
 
-// import app.passwordstore.injection.prefs.ProxyPreferences
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import app.passwordstore.data.repo.PasswordRepository
@@ -92,18 +91,14 @@ constructor(
     }
 
   var proxyHost
-    // get() = settings.getString(PreferenceKeys.PROXY_HOST)
     get() = settings.getString(PreferenceKeys.PROXY_HOST)
     set(value) {
-      // settings.edit { putString(PreferenceKeys.PROXY_HOST, value) }
       settings.edit { putString(PreferenceKeys.PROXY_HOST, value) }
     }
 
   var proxyPort
-    // get() = settings.getInt(PreferenceKeys.PROXY_PORT, -1)
     get() = settings.getInt(PreferenceKeys.PROXY_PORT, -1)
     set(value) {
-      // settings.edit { putInt(PreferenceKeys.PROXY_PORT, value) }
       settings.edit { putInt(PreferenceKeys.PROXY_PORT, value) }
     }
 
