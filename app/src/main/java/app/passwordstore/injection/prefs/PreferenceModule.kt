@@ -32,11 +32,6 @@ class PreferenceModule {
     )
   } */
 
-  /* @[Provides PasswordGeneratorPreferences Reusable]
-  fun providePwgenPreferences(@ApplicationContext context: Context): SharedPreferences {
-    return createEncryptedPreferences(context, "pwgen_preferences")
-  } */
-
   @[Provides SettingsPreferences Reusable]
   fun provideSettingsPreferences(@ApplicationContext context: Context): SharedPreferences {
     return context.getSharedPreferences("${BuildConfig.APPLICATION_ID}_preferences", MODE_PRIVATE)
@@ -45,10 +40,5 @@ class PreferenceModule {
   /*  @[Provides GitPreferences Reusable]
   fun provideGitPreferences(@ApplicationContext context: Context): SharedPreferences {
     return createEncryptedPreferences(context, "git_operation")
-  } */
-
-  /* @[Provides ProxyPreferences Reusable]
-  fun provideProxyPreferences(@ApplicationContext context: Context): SharedPreferences {
-    return createEncryptedPreferences(context, "http_proxy")
   } */
 }
