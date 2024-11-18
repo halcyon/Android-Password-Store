@@ -11,6 +11,7 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import app.passwordstore.Application
 import app.passwordstore.util.extensions.getString
 import app.passwordstore.util.git.sshj.SshKey
 import com.github.michaelbull.result.get
@@ -27,7 +28,7 @@ fun runMigrations(
   filesDirPath: String,
   sharedPrefs: SharedPreferences,
   gitSettings: GitSettings,
-  context: Context,
+  context: Context = Application.instance.applicationContext,
   runTest: Boolean = false,
 ) {
   migrateToGitUrlBasedConfig(sharedPrefs, gitSettings)

@@ -59,8 +59,7 @@ class Application : android.app.Application(), SharedPreferences.OnSharedPrefere
     prefs.registerOnSharedPreferenceChangeListener(this)
     setNightMode()
     setUpBouncyCastleForSshj()
-    val context: Context = getApplicationContext()
-    runMigrations(filesDirPath, prefs, gitSettings, context)
+    runMigrations(filesDirPath, prefs, gitSettings)
     proxyUtils.setDefaultProxy()
     DynamicColors.applyToActivitiesIfAvailable(this)
     Sentry.configureScope { scope ->
