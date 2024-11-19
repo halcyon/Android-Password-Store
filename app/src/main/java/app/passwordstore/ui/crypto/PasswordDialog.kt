@@ -30,7 +30,7 @@ class PasswordDialog : DialogFragment() {
   override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
     val builder = MaterialAlertDialogBuilder(requireContext())
     builder.setView(binding.root)
-    builder.setTitle(R.string.password)
+    builder.setTitle(R.string.pgp_passphrase_input)
 
     cacheEnabledChecked = requireArguments().getBoolean(CACHE_ENABLED_EXTRA)
     binding.cacheEnabled.isChecked = cacheEnabledChecked
@@ -43,7 +43,7 @@ class PasswordDialog : DialogFragment() {
     dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
     dialog.setOnShowListener {
       if (isError) {
-        binding.passwordField.error = getString(R.string.git_operation_wrong_password)
+        binding.passwordField.error = getString(R.string.pgp_wrong_passphrase_input)
       }
       binding.passwordEditText.doOnTextChanged { _, _, _, _ -> binding.passwordField.error = null }
       binding.passwordEditText.setOnKeyListener { _, keyCode, _ ->

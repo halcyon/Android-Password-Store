@@ -375,5 +375,6 @@
 
   <!-- Passphrase input -->
   <string name="cache_password_until_screen_off">Keep passphrase until screen-off</string>
-  <string name="password_input">PGP Passphrase</string>
+  <string name="pgp_passphrase_input">PGP passphrase</string>
+  <string name="pgp_wrong_passphrase_input">wrong PGP passphrase</string>
 </resources>
