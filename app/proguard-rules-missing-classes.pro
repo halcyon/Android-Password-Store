@@ -155,3 +155,14 @@
 -dontwarn androidx.work.Worker
 -dontwarn androidx.work.multiprocess.RemoteListenableWorker
 -dontwarn sun.misc.SignalHandler
+-dontwarn java.lang.ProcessHandle
+-dontwarn java.lang.management.ManagementFactory
+-dontwarn javax.management.InstanceAlreadyExistsException
+-dontwarn javax.management.InstanceNotFoundException
+-dontwarn javax.management.JMException
+-dontwarn javax.management.MBeanRegistrationException
+-dontwarn javax.management.MBeanServer
+-dontwarn javax.management.MalformedObjectNameException
+-dontwarn javax.management.NotCompliantMBeanException
+-dontwarn javax.management.ObjectInstance
+-dontwarn javax.management.ObjectName

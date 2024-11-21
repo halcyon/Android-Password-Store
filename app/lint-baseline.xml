@@ -30,13 +30,6 @@
     </issue>
 
     <issue
-        id="InvalidPackage"
-        message="Invalid package reference in org.eclipse.jgit:org.eclipse.jgit; not included in Android: `javax.xml.bind`. Referenced from `org.eclipse.jgit.transport.WalkEncryption.SymmetricEncryption`.">
-        <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.eclipse.jgit/org.eclipse.jgit/4.5.7.201904151645-r/e84008db495a7f48d65fb09afe53279b0df68c80/org.eclipse.jgit-4.5.7.201904151645-r.jar"/>
-    </issue>
-
-    <issue
         id="DenyListedApi"
         message="Use Context#getDrawableCompat() instead"
         errorLine1="                ContextCompat.getDrawable(itemView.context, R.drawable.ic_content_copy)"
