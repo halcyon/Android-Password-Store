@@ -48,7 +48,6 @@
       ],
       enabled: false,
       matchPackageNames: [
-        '/^org.eclipse.jgit/',
         '/^com.android.tools:desugar_jdk_libs/',
         '/^commons-codec:commons-codec/',
       ],
