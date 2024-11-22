@@ -12,7 +12,6 @@ import android.view.MenuItem
 import androidx.core.content.edit
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
-import app.passwordstore.Application.Companion.cachedPassphrase
 import app.passwordstore.R
 import app.passwordstore.crypto.PGPIdentifier
 import app.passwordstore.crypto.errors.NonStandardAEAD

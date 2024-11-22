@@ -234,5 +234,7 @@ open class BasePGPActivity : AppCompatActivity() {
         basename
       }
     }
+
+    var cachedPassphrase: CharArray? = null
   }
 }

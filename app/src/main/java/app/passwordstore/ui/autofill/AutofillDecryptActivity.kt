@@ -14,7 +14,6 @@ import android.view.autofill.AutofillManager
 import androidx.core.content.edit
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
-import app.passwordstore.Application.Companion.cachedPassphrase
 import app.passwordstore.crypto.PGPIdentifier
 import app.passwordstore.data.passfile.PasswordEntry
 import app.passwordstore.data.repo.PasswordRepository

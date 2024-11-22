@@ -14,6 +14,7 @@ import android.os.StrictMode
 import androidx.appcompat.app.AppCompatDelegate.*
 import app.passwordstore.injection.context.FilesDirPath
 import app.passwordstore.injection.prefs.SettingsPreferences
+import app.passwordstore.ui.crypto.BasePGPActivity.Companion.cachedPassphrase
 import app.passwordstore.util.coroutines.DispatcherProvider
 import app.passwordstore.util.extensions.getString
 import app.passwordstore.util.features.Features
@@ -136,6 +137,5 @@ class Application : android.app.Application(), SharedPreferences.OnSharedPrefere
   companion object {
 
     lateinit var instance: Application
-    var cachedPassphrase: CharArray? = null
   }
 }
