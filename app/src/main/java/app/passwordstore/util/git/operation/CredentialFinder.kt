@@ -69,8 +69,8 @@ class CredentialFinder(
           setView(dialogView)
           setPositiveButton(R.string.dialog_ok) { _, _ ->
             val credential = editCredential.text.toString().toCharArray()
-            storedCredential = credential
-            cont.resume(String(credential).toCharArray())
+            storedCredential = credential.clone()
+            cont.resume(credential)
           }
           setNegativeButton(R.string.dialog_cancel) { _, _ -> cont.resume(null) }
           setOnCancelListener { cont.resume(null) }
@@ -81,8 +81,7 @@ class CredentialFinder(
           show()
         }
     } else {
-      val credential = storedCredential ?: charArrayOf()
-      cont.resume(credential)
+      cont.resume(storedCredential?.clone())
     }
   }
 }
