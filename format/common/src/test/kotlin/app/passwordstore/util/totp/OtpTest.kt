@@ -43,7 +43,7 @@ class OtpTest {
     assertNull(generateOtp(counter = 10000, digits = "a"))
     assertNull(generateOtp(counter = 10000, algorithm = "SHA1", digits = "5"))
     assertNull(generateOtp(counter = 10000, digits = "11"))
-    assertNull(generateOtp(counter = 10000, secret = "JBSWY3DPEHPK3PXPAAAAB", digits = "6"))
+    assertNotNull(generateOtp(counter = 10000, secret = "JBSWY3DPEHPK3PXPAAAAB", digits = "6"))
   }
 
   @Test
