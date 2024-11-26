@@ -80,11 +80,5 @@
         "zu": "zu"
       }
     }
-  },
-  {
-    "source": "/app/src/nonFree/res/values/strings.xml",
-    "dest": "/nonFree_strings.xml",
-    "translation": "/app/src/nonFree/res/values-%android_code%/strings.xml",
-    "languages_mapping": *stringmapping
   }
 ]
