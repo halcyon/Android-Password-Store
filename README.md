@@ -12,7 +12,7 @@ The original documentation can be found [here](https://docs.passwordstore.app) a
 
 ## Contributing
 
-This fork of the original repository just tries to keep pace with automatic dependency updates made by [Renovate](https://github.com/apps/renovate). New features will most likely not be implemented.
+This fork of the original repository just tries to keep pace with automatic dependency updates made by [Renovate](https://github.com/apps/renovate). New features will most likely not be implemented, only fixes. See [ChangeLog](https://github.com/agrahn/Android-Password-Store/blob/develop/CHANGELOG.md).
 
 ## Donations
 
