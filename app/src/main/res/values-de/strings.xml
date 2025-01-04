@@ -331,7 +331,7 @@
   <string name="clone_remote_repo">Remote-Repository klonen</string>
   <string name="create_local_repo">Lokales Repository anlegen</string>
   <string name="select_gpg_key_title">Wählen Sie einen\nPGP-Schlüssel.</string>
-  <string name="select_gpg_key_message">Wählen einen PGP-Schlüssel, mit dem der Store initialisiert werden soll.</string>
+  <string name="select_gpg_key_message">Wählen Sie einen PGP-Schlüssel, mit dem der Store initialisiert werden soll.</string>
   <string name="gpg_key_select">Schlüssel auswählen</string>
 
   <!-- SSH port validation -->
