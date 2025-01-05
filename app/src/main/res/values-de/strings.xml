@@ -349,7 +349,7 @@
   <string name="pref_edit_proxy_settings">HTTP(S)-Proxy-Einstellungen</string>
   <string name="invalid_proxy_url">Ungültige URL</string>
   <string name="oreo_autofill_password_fill_and_conditional_save_support">Passwörter ausfüllen und speichern (Für das Speichern dürfen keine Dienste zur Barrierefreiheit aktiviert sein.)</string>
-  <string name="clear_saved_host_key">Gespeicherten Host-Schlüssel löschen</string>
+  <string name="clear_saved_host_key">Gespeicherten\nHost-Schlüssel löschen</string>
   <string name="clear_saved_host_key_success">Host-Schlüssel erfolgreich gelöscht!</string>
   <string name="otp_import_qr_code">QR-Code scannen</string>
   <string name="otp_import_from_file">Wählen Sie ein Bild.</string>
