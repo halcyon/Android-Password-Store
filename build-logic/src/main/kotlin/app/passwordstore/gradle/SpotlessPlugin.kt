@@ -32,7 +32,7 @@ class SpotlessPlugin : Plugin<Project> {
         target("**/*.xml")
         targetExclude("**/build/", ".idea/")
         trimTrailingWhitespace()
-        indentWithSpaces()
+        leadingTabsToSpaces()
         endWithNewline()
       }
     }
